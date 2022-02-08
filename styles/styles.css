@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Epilogue:wght@100;200;300;400;500;600;700&display=swap");
+
+html {
+  font-family: "Epilogue", sans-serif;
+  font-size: 20px;
+  color: #fff;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+body {
+  background-color: #000;
+  margin: 0;
+}
+
+a,
+a:hover,
+a:visited,
+a:link {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+a:active {
+  color: #ffc11e;
+}
+
+p {
+  font-weight: 200;
+  font-size: 0.8rem;
+  line-height: 1.2rem;
+}
+
+section {
+  height: 110vh;
+}
+
+figure {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.navTab {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 4rem;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.navTab a {
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 200;
+}
+
+.iconContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icon + a {
+  margin-left: 0.8rem;
+}
+
+.icon {
+  border: 1px solid #fff;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.navItems {
+  display: inline-block;
+  margin-left: 1rem;
+}
+
+.landingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3rem;
+}
+
+.landingPortraitContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.landingPortrait {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50rem;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.landingTitle {
+  width: 50%;
+  text-align: center;
+}
+
+.landingDescription {
+  width: 28%;
+  text-align: center;
+}
+
+.landingDescription p {
+  font-weight: 100;
+}
+
+.buttonContainer {
+  padding-top: 1rem;
+}
+
+.connectButton {
+  padding: 15px;
+  border-radius: 30px;
+  background-image: linear-gradient(to right, #ffc11e 50%, #fff 50%);
+  background-size: 200% 100%;
+  width: 8rem;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-position 0.4s;
+}
+
+.connectButton:hover {
+  background-position: 100% 0;
+}
+
+.whiteNav {
+  background-color: #fff;
+}
+
+.whiteNav,
+.whiteNav a {
+  color: #000;
+}
+
+.whiteIcon {
+  border: 1px solid #000;
+}
+
+.skillsContainer {
+  display: flex;
+  color: #000;
+}
+
+.skillsIntro {
+  position: relative;
+}
+
+.skillsAndExp h1 {
+  margin-top: 0;
+}
+
+.skillsAndExp,
+.experience {
+  width: 50%;
+  height: 110vh;
+  background-color: #fff;
+  padding: 5rem;
+  border: 2px solid green;
+}
+
+.absoluteP {
+  position: absolute;
+  margin: 0;
+  top: -1rem;
+  left: -2.5rem;
+  transform: rotate(-35deg);
+  font-weight: 400;
+  font-size: 0.7rem;
+  color: #1771f1;
+}
+
+.skills {
+  padding-top: 1rem;
+}
