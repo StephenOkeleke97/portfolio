@@ -11,6 +11,11 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
+  background-color: #000;
+}
+
+.headerLight {
+  background-color: #fff;
 }
 
 h1 {
@@ -26,6 +31,7 @@ body {
   background-image: linear-gradient(0deg, #000, #000);
   color: #fff;
   margin: 0;
+  transition: color 0.5s;
 }
 
 .bodyLight {
@@ -73,11 +79,7 @@ figure {
   padding: 0 4rem;
   align-items: center;
   padding-top: 1.5rem;
-  background-color: #000;
-}
-
-.navTabLight {
-  background-color: #fff;
+  /* background-color: #000; */
 }
 
 .navTab a {
@@ -93,14 +95,6 @@ figure {
 .whiteNav,
 .whiteNav a {
   color: #000;
-}
-
-.whiteNav {
-  background-color: #fff;
-}
-
-.yellowNav {
-  background-color: #ffc11e;
 }
 
 .iconContainer {
@@ -233,10 +227,14 @@ figure {
 }
 
 /* EXPERIENCE PAGE  */
+.experienceHeader {
+  background-color: #000;
+}
 
 .paneContainer {
   display: flex;
   color: #000;
+  transition: color 0.5s;
 }
 
 .paneBlackContainer {
@@ -381,6 +379,13 @@ figure {
 }
 
 /* PROJECTS PAGE  */
+.projectsHeader {
+  background-color: #ffc11e;
+}
+
+.projectsHeaderLight {
+  background-color: #2398ab;
+}
 
 .projectsContainer {
   height: 100vh;
@@ -389,6 +394,11 @@ figure {
   display: flex;
   justify-content: space-between;
   color: #000;
+}
+
+.projectsContainerLight {
+  background-color: #2398ab;
+  color: #fff;
 }
 
 .projectsContainer h1 {
@@ -419,6 +429,10 @@ figure {
   border-top: 1px solid #000;
 }
 
+.projectItemContainerLight {
+  border-top: 1px solid #fff;
+}
+
 .projectScreenshotContainer {
   flex-grow: 1;
 }
@@ -438,6 +452,10 @@ figure {
 
 .yellowFooter {
   background-color: #ffc11e;
+}
+
+.yellowFooterLight {
+  background-color: #2398ab;
 }
 
 .whiteFooter {
