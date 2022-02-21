@@ -11,8 +11,29 @@ const emailIcom = document.querySelector(".icon");
 const footer = document.getElementsByTagName("footer")[0];
 const header = document.getElementsByTagName("header")[0];
 const projectHeader = document.querySelector(".projectsHeader");
+const dateButton = document.querySelector(".dateButton");
 
 toggleTheme.addEventListener("click", changeTheme);
+
+dateButton.addEventListener("click", showDate);
+
+function showDate() {
+    const dateRadio = document.getElementById("date");
+    const dateText = document.getElementById("dateDisplay");
+
+    const date = new Date();
+    if (dateRadio.checked) {
+        const display = date.toDateString();
+        appendDate(display);
+    } else {
+        const display = date.toLocaleTimeString();
+        appendDate(display);
+    }
+}
+
+function appendDate() {
+
+}
 
 function changeTheme() {
   toggleBall.classList.toggle("toggleLight");
