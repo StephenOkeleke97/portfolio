@@ -11,6 +11,7 @@ const emailIcom = document.querySelector(".icon");
 const footer = document.getElementsByTagName("footer")[0];
 const header = document.getElementsByTagName("header")[0];
 const projectHeader = document.querySelector(".projectsHeader");
+const dateContainer = document.querySelector(".dateContainer");
 const dateButton = document.querySelector(".dateButton");
 
 toggleTheme.addEventListener("click", changeTheme);
@@ -18,50 +19,67 @@ toggleTheme.addEventListener("click", changeTheme);
 dateButton.addEventListener("click", showDate);
 
 function showDate() {
-    const dateRadio = document.getElementById("date");
-    const dateText = document.getElementById("dateDisplay");
+  const dateRadio = document.getElementById("date");
 
-    const date = new Date();
-    if (dateRadio.checked) {
-        const display = date.toDateString();
-        appendDate(display);
-    } else {
-        const display = date.toLocaleTimeString();
-        appendDate(display);
-    }
+  const date = new Date();
+  if (dateRadio.checked) {
+    const display = date.toDateString();
+    appendDate(display);
+  } else {
+    const display = date.toLocaleTimeString();
+    appendDate(display);
+  }
 }
 
-function appendDate() {
+function appendDate(display) {
+  const dateElement = document.querySelector(".dateText");
+  const dateContainer = document.querySelector(".dateContainer");
 
+  if (dateElement === null) {
+    const dateElement = document.createElement("p");
+    dateElement.classList.add("dateText");
+    dateElement.innerText = display;
+    dateContainer.prepend(dateElement);
+  } else {
+    dateElement.innerText = display;
+  }
 }
 
-function changeTheme() {
+function changeTheme(event) {
+  changeGeneralTheme();
+  changeProjectsTheme();
+  changeExperienceTheme();
+  changeHomeTheme();
+
+  if (event) {
+    localStorage.setItem("darkTheme", !darkTheme);
+    darkTheme = !darkTheme;
+  }
+
+  changeEducationTheme(darkTheme);
+}
+
+function changeGeneralTheme() {
   toggleBall.classList.toggle("toggleLight");
   header.classList.toggle("headerLight");
-  this.classList.toggle("themeButtonLight");
-  
+  dateButton.classList.toggle("dateButtonLight");
+  toggleTheme.classList.toggle("themeButtonLight");
+
   if (projectHeader === null) {
     body.classList.toggle("bodyLight");
     emailIcom.classList.toggle("iconLight");
     nav.classList.toggle("navTabLight");
     footer.classList.toggle("footerLight");
+    dateContainer.classList.toggle("dateContainerLight");
   }
-
-  changeEducationTheme(!darkTheme);
-  changeProjectsTheme();
-  changeExperienceTheme();
-  changeHomeTheme();
-
-  localStorage.setItem("darkTheme", !darkTheme);
-  darkTheme = !darkTheme;
 }
 
 function changeHomeTheme() {
-    const connectButton = document.querySelector(".connectButton");
+  const connectButton = document.querySelector(".connectButton");
 
-    if (connectButton !== null) {
-        connectButton.classList.toggle("connectButtonLight")
-    }
+  if (connectButton !== null) {
+    connectButton.classList.toggle("connectButtonLight");
+  }
 }
 
 function changeEducationTheme(darkTheme) {
@@ -79,11 +97,11 @@ function changeEducationTheme(darkTheme) {
     });
 
     educationItem.forEach((item) => {
-        item.classList.toggle("educationItemLight");
+      item.classList.toggle("educationItemLight");
     });
 
     courseworkContainer.forEach((item) => {
-        item.classList.toggle("courseworkContainerLight");
+      item.classList.toggle("courseworkContainerLight");
     });
 
     if (darkTheme) {
@@ -97,50 +115,40 @@ function changeEducationTheme(darkTheme) {
 function changeProjectsTheme() {
   const projectFooter = document.querySelector(".projectsFooter");
   const projectContainer = document.querySelector(".projectsContainer");
-  const projectItemContainer = document.querySelectorAll(".projectItemContainer");
+  const projectItemContainer = document.querySelectorAll(
+    ".projectItemContainer"
+  );
 
   if (projectHeader !== null) {
     projectHeader.classList.toggle("projectsHeaderLight");
     projectFooter.classList.toggle("projectsFooterLight");
     projectContainer.classList.toggle("projectsContainerLight");
-    projectItemContainer.forEach(item => {
-        item.classList.toggle("projectItemContainerLight");
+    projectItemContainer.forEach((item) => {
+      item.classList.toggle("projectItemContainerLight");
     });
   }
 }
 
 function changeExperienceTheme() {
-    const skillItems = document.querySelectorAll(".skillItemIcons");
-    const experiencePaneContainer = document.querySelector(".experiencePaneContainer");
-    const experiencePanes = document.querySelectorAll(".experiencePanes");
-    if (experiencePaneContainer !== null) {
-        skillItems.forEach(item => {
-            item.classList.toggle("skillItemIconsLight");
-        });
-        experiencePaneContainer.classList.toggle("experiencePaneContainerBlack");
-        experiencePanes.forEach((item) => {
-          item.classList.toggle("paneBlack");
-        });
-    }
+  const skillItems = document.querySelectorAll(".skillItemIcons");
+  const experiencePaneContainer = document.querySelector(
+    ".experiencePaneContainer"
+  );
+  const experiencePanes = document.querySelectorAll(".experiencePanes");
+  if (experiencePaneContainer !== null) {
+    skillItems.forEach((item) => {
+      item.classList.toggle("skillItemIconsLight");
+    });
+    experiencePaneContainer.classList.toggle("experiencePaneContainerBlack");
+    experiencePanes.forEach((item) => {
+      item.classList.toggle("paneBlack");
+    });
+  }
 }
 
 function loadTheme() {
   if (!darkTheme) {
-    toggleBall.classList.add("toggleLight");
-    header.classList.add("headerLight");
-    toggleTheme.classList.add("themeButtonLight");
-
-    if (projectHeader === null) {
-        body.classList.add("bodyLight");
-        nav.classList.add("navTabLight");
-        emailIcom.classList.add("iconLight");
-        footer.classList.add("footerLight");
-    }
-
-    changeEducationTheme(darkTheme);
-    changeProjectsTheme();
-    changeExperienceTheme();
-    changeHomeTheme();
+    changeTheme();
   }
 }
 
