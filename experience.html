@@ -1,146 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="./images/favicon-16x16.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/x-icon" href="./images/favicon-16x16.png" />
+    <script defer src="./scripts/script.js"></script>
     <title>Stephen's Portfolio | Experience</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <header>
-        <div class="navTab whiteNav">
-            <div class="iconContainer">
-                <div class="icon whiteIcon">
-                    <ion-icon name="mail-outline"></ion-icon>
-                </div>
-                <a href="mailto:okeleke.s@northeastern.edu">stephenokeleke@yahoo.com</a>
-            </div>
-
-            <div class="navItemsContainer">
-                <ul>
-                    <li class="navItems"><a href="index.html">Home</a></li>
-                    <li class="navItems"><a href="education.html">Education</a></li>
-                    <li class="navItems"><a href="projects.html">Projects</a></li>
-                    <li class="navItems"><a href="#">Experience</a></li>
-                </ul>
-            </div>
+      <div class="navTabContainer">
+        <div class="dateContainer">
+          <form class="dateButtonContainer">
+            <input name="timeDisplay" type="radio" id="date" checked />
+            <label for="date">Date</label>
+            <input name="timeDisplay" type="radio" id="time" />
+            <label for="time">Time</label>
+            <div class="dateButton">Display</div>
+          </form>
         </div>
+
+        <div class="navTab">
+          <div class="iconContainer">
+            <div class="icon">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <a href="mailto:okeleke.s@northeastern.edu"
+              >stephenokeleke@yahoo.com</a
+            >
+          </div>
+
+          <div class="navItemsContainer">
+            <ul>
+              <li class="navItems"><a href="index.html">Home</a></li>
+              <li class="navItems"><a href="education.html">Education</a></li>
+              <li class="navItems"><a href="projects.html">Projects</a></li>
+              <li class="navItems"><a href="#">Experience</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="themeButtonContainer">
+          <div class="themeButton">
+            <div class="toggle"></div>
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="sunny-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
     </header>
 
     <section>
-        <div class="paneContainer">
-            <div class="leftPane">
+      <div class="experiencePaneContainer experiencePaneContainerBlack">
+        <div class="experiencePanes leftPane paneBlack">
+          <div class="skillsIntro">
+            <p class="absoluteP">Experience</p>
+            <h1>Skills & Experience</h1>
+            <p>
+              A full stack software developer in Vancouver. I specialize in
+              server-side development using java and front-end design using
+              HTML, CSS, Javascript and frameworks like React.js. I also have
+              working knowledge in making mobile applications with React Native.
+            </p>
+          </div>
 
-                <div class="skillsIntro">
-                    <p class="absoluteP">Experience</p>
-                    <h1>Skills & Experience</h1>
-                    <p>A full stack software developer in Vancouver. 
-                        I specialize in server-side development using java and front-end design
-                    using HTML, CSS, Javascript and frameworks like React.js. 
-                    I also have working knowledge in making 
-                mobile applications with React Native.</p>
+          <div class="skills">
+            <h2>Skills</h2>
+
+            <div class="skillsList">
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fab fa-java"></i>
                 </div>
+                <p>Java</p>
+              </div>
 
-                <div class="skills">
-                    <h2>Skills</h2>
-
-                    <div class="skillsList">
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <p>Java</p>
-                        </div>
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <p>HTMl</p>
-                        </div>
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <p>CSS</p>
-                        </div>
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <p>React</p>
-                        </div>
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fab fa-react"></i>
-                            </div>
-                            <p>React Native</p>
-                        </div>
-
-                        <div class="skillItems">
-                            <div class="skillItemIcons">
-                                <i class="fas fa-database"></i>
-                            </div>
-                            <p>SQL</p>
-                        </div>
-
-                    </div>
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fab fa-html5"></i>
                 </div>
+                <p>HTMl</p>
+              </div>
+
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fab fa-css3-alt"></i>
+                </div>
+                <p>CSS</p>
+              </div>
+
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fab fa-react"></i>
+                </div>
+                <p>React</p>
+              </div>
+
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fab fa-react"></i>
+                </div>
+                <p>React Native</p>
+              </div>
+
+              <div class="skillItems">
+                <div class="skillItemIcons">
+                  <i class="fas fa-database"></i>
+                </div>
+                <p>SQL</p>
+              </div>
             </div>
-
-            <div class="rightPane">
-                <h2>Experience</h2>
-                <div class="experienceList">
-                    <div class="experienceItems">
-                        <p>December 2018 - August 2021</p>
-                        <div class="experienceInfo">
-                            <p>IT Administrator</p>
-                            <p>NBET, Abuja Nigeria</p>
-                        </div>
-                    </div>
-
-                    <div class="experienceItems">
-                        <p>March 2018 - December 2018</p>
-                        <div class="experienceInfo">
-                            <p>Full Stack Software Engr (Intern)</p>
-                            <p>Acti-Tech, Abuja Nigeria</p>
-                        </div>
-                    </div>
-
-                    <div class="experienceItems">
-                        <p>February 2017 - September 2017</p>
-                        <div class="experienceInfo">
-                            <p>Software Engr (Intern)</p>
-                            <p>Fox Fire Limited, Abuja Nigeria</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+          </div>
         </div>
+
+        <div class="experiencePanes rightPane paneBlack">
+          <h2>Experience</h2>
+          <div class="experienceList">
+            <div class="experienceItems">
+              <p>December 2018 - August 2021</p>
+              <div class="experienceInfo">
+                <p>IT Administrator</p>
+                <p>NBET, Abuja Nigeria</p>
+              </div>
+            </div>
+
+            <div class="experienceItems">
+              <p>March 2018 - December 2018</p>
+              <div class="experienceInfo">
+                <p>Full Stack Software Engr (Intern)</p>
+                <p>Acti-Tech, Abuja Nigeria</p>
+              </div>
+            </div>
+
+            <div class="experienceItems">
+              <p>February 2017 - September 2017</p>
+              <div class="experienceInfo">
+                <p>Software Engr (Intern)</p>
+                <p>Fox Fire Limited, Abuja Nigeria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <footer>
-        <div class="footer whiteFooter">
-            <div class="footerContainer">
-                <p>Copyright&copy; 2022. All Rights Reserved</p>
-                <div class="footerIconContainer">
-                    <a href="https://github.ccs.neu.edu/stephenokeleke" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:okeleke.s@northeastern.edu"><i class="far fa-envelope"></i></a>
-                </div>
-            </div>
+      <div class="footer">
+        <div class="footerContainer">
+          <p>Copyright&copy; 2022. All Rights Reserved</p>
+          <div class="footerIconContainer">
+            <a href="https://github.ccs.neu.edu/stephenokeleke" target="_blank"
+              ><i class="fab fa-github"></i
+            ></a>
+            <a href="mailto:okeleke.s@northeastern.edu"
+              ><i class="far fa-envelope"></i
+            ></a>
+          </div>
         </div>
+      </div>
     </footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-</body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
 </html>

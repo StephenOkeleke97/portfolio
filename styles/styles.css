@@ -5,7 +5,17 @@
 html {
   font-family: "Epilogue", sans-serif;
   font-size: 20px;
-  color: #fff;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #000;
+}
+
+.headerLight {
+  background-color: #fff;
 }
 
 h1 {
@@ -19,7 +29,14 @@ h2 {
 
 body {
   background-image: linear-gradient(0deg, #000, #000);
+  color: #fff;
   margin: 0;
+  transition: color 0.5s;
+}
+
+.bodyLight {
+  background-image: linear-gradient(0deg, #fff, #fff);
+  color: #000;
 }
 
 a:hover,
@@ -49,6 +66,11 @@ figure {
 
 /* NAVIGATION  */
 
+.navTabContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .navTab {
   height: 3rem;
   display: flex;
@@ -57,7 +79,6 @@ figure {
   padding: 0 4rem;
   align-items: center;
   padding-top: 1.5rem;
-  background-color: #000;
 }
 
 .navTab a {
@@ -66,17 +87,13 @@ figure {
   font-weight: 200;
 }
 
-.whiteNav,
-.whiteNav a {
+.navTabLight a {
   color: #000;
 }
 
-.whiteNav {
-  background-color: #fff;
-}
-
-.yellowNav {
-  background-color: #ffc11e;
+.whiteNav,
+.whiteNav a {
+  color: #000;
 }
 
 .iconContainer {
@@ -95,6 +112,10 @@ figure {
   border-radius: 50px;
 }
 
+.iconLight {
+  border: 1px solid #000;
+}
+
 .whiteIcon {
   border: 1px solid #000;
 }
@@ -102,6 +123,99 @@ figure {
 .navItems {
   display: inline-block;
   margin-left: 1rem;
+}
+
+/* THEME */
+.themeButtonContainer,
+.dateContainer {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.dateContainer {
+  padding-top: 1rem;
+  flex-direction: column;
+  font-size: 0.7rem;
+}
+
+.dateContainerLight {
+  color: #000;
+}
+
+.dateButtonContainer {
+  margin-top: 0.5rem;
+}
+
+.dateButton {
+  padding: 0.3rem;
+  background-image: linear-gradient(to right, #ffc11e 50%, #fff 50%);
+  color: #000;
+  display: inline-block;
+  margin-left: 1rem;
+  border-radius: 0.8rem;
+  border: 1px solid #fff;
+  color: #fff;
+  background-size: 200% 100%;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dateButton:hover {
+  background-position: 100% 0;
+  color: #000;
+}
+
+.dateButtonLight {
+  color: #fff;
+  background-image: linear-gradient(to right, #ff7272 50%, #000 50%);
+}
+
+.dateButtonLight:hover {
+  color: #fff;
+}
+
+.dateContainer > p {
+  margin: 0;
+}
+
+.dateContainer input[type="radio"] {
+  cursor: pointer;
+}
+
+.themeButton {
+  padding: 0.1rem 0.1rem;
+  background-image: linear-gradient(315deg, #fff000 0%, #ed008c 74%);
+  display: flex;
+  justify-content: space-between;
+  width: 2.5rem;
+  height: 1rem;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.themeButtonLight {
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.toggle {
+  height: 90%;
+  width: 40%;
+  background-color: #fff;
+  border-radius: 50px;
+  transform: translateX(0%);
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 2%;
+  transition: transform 0.2s;
+}
+
+.toggleLight {
+  transform: translateX(140%);
 }
 
 /* LANDING PAGE  */
@@ -147,7 +261,7 @@ figure {
 }
 
 .connectButton {
-  padding: 15px;
+  padding: 0.75rem;
   border-radius: 30px;
   background-image: linear-gradient(to right, #ffc11e 50%, #fff 50%);
   background-size: 200% 100%;
@@ -158,18 +272,32 @@ figure {
   transition: background-position 0.4s;
 }
 
+.connectButtonLight {
+  background-image: linear-gradient(to right, #ff7272 50%, #000 50%);
+}
+
+.connectButtonLight a {
+  color: #fff;
+}
+
 .connectButton:hover {
   background-position: 100% 0;
 }
 
 /* EXPERIENCE PAGE  */
-
-.paneContainer {
-  display: flex;
-  color: #000;
+.experienceHeaderLight {
+  background-color: #fff;
 }
 
-.paneBlackContainer {
+.paneContainer,
+.experiencePaneContainer {
+  display: flex;
+  color: #000;
+  transition: color 0.5s;
+}
+
+.paneBlackContainer,
+.experiencePaneContainerBlack {
   color: #fff;
 }
 
@@ -237,9 +365,14 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
+  background-color: #fff;
+  font-size: 1.8rem;
+}
+
+.skillItemIconsLight {
   color: #fff;
   background-color: #000;
-  font-size: 1.8rem;
 }
 
 .experienceItems {
@@ -274,12 +407,21 @@ figure {
   color: #ffc11e;
 }
 
+.educationItemLight h2 {
+  color: #ff7272;
+}
+
 .courseworkContainer {
   padding: 1rem;
   display: flex;
   background-color: #ffc11e;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
+  color: #fff;
+}
+
+.courseworkContainerLight {
+  background-color: #ff7272;
 }
 
 .courseWorkIcon {
@@ -311,6 +453,13 @@ figure {
 }
 
 /* PROJECTS PAGE  */
+.projectsHeader {
+  background-color: #ffc11e;
+}
+
+.projectsHeaderLight {
+  background-color: #ff7272;
+}
 
 .projectsContainer {
   height: 100vh;
@@ -319,6 +468,11 @@ figure {
   display: flex;
   justify-content: space-between;
   color: #000;
+}
+
+.projectsContainerLight {
+  background-color: #ff7272;
+  color: #fff;
 }
 
 .projectsContainer h1 {
@@ -349,6 +503,10 @@ figure {
   border-top: 1px solid #000;
 }
 
+.projectItemContainerLight {
+  border-top: 1px solid #fff;
+}
+
 .projectScreenshotContainer {
   flex-grow: 1;
 }
@@ -358,16 +516,20 @@ figure {
   height: 100%;
 }
 
+.projectsFooter {
+  background-color: #ffc11e;
+}
+
+.projectsFooterLight {
+  background-color: #ff7272;
+}
+
 /* FOOTER  */
 
 .footer {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 2rem;
-}
-
-.yellowFooter {
-  background-color: #ffc11e;
 }
 
 .whiteFooter {
@@ -379,6 +541,10 @@ figure {
   color: #fff;
   margin-left: 0.8rem;
   font-size: 1.3rem;
+}
+
+.footerLight a {
+  color: #000;
 }
 
 .whiteFooter a {
