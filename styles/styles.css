@@ -5,7 +5,12 @@
 html {
   font-family: "Epilogue", sans-serif;
   font-size: 20px;
-  color: #fff;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 h1 {
@@ -19,7 +24,13 @@ h2 {
 
 body {
   background-image: linear-gradient(0deg, #000, #000);
+  color: #fff;
   margin: 0;
+}
+
+.bodyLight {
+  background-image: linear-gradient(0deg, #fff, #fff);
+  color: #000;
 }
 
 a:hover,
@@ -49,6 +60,11 @@ figure {
 
 /* NAVIGATION  */
 
+.navTabContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .navTab {
   height: 3rem;
   display: flex;
@@ -60,10 +76,18 @@ figure {
   background-color: #000;
 }
 
+.navTabLight {
+  background-color: #fff;
+}
+
 .navTab a {
   color: #fff;
   font-size: 0.7rem;
   font-weight: 200;
+}
+
+.navTabLight a {
+  color: #000;
 }
 
 .whiteNav,
@@ -95,6 +119,10 @@ figure {
   border-radius: 50px;
 }
 
+.iconLight {
+  border: 1px solid #000;
+}
+
 .whiteIcon {
   border: 1px solid #000;
 }
@@ -102,6 +130,48 @@ figure {
 .navItems {
   display: inline-block;
   margin-left: 1rem;
+}
+
+/* THEME */
+.themeButtonContainer {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.themeButton {
+  padding: 0.1rem 0.1rem;
+  background-image: linear-gradient(315deg, #fff000 0%, #ed008c 74%);
+  display: flex;
+  justify-content: space-between;
+  width: 2.5rem;
+  height: 1rem;
+  border-radius: 20px;
+  position: relative;
+  cursor: pointer;
+}
+
+.themeButtonLight {
+  background-image: linear-gradient(326deg, #a4508b 0%, #5f0a87 74%);
+}
+
+.toggle {
+  height: 90%;
+  width: 40%;
+  background-color: #fff;
+  border-radius: 50px;
+  transform: translateX(0%);
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 2%;
+  transition: transform 0.2s;
+}
+
+.toggleLight {
+  transform: translateX(140%);
 }
 
 /* LANDING PAGE  */
@@ -379,6 +449,10 @@ figure {
   color: #fff;
   margin-left: 0.8rem;
   font-size: 1.3rem;
+}
+
+.footerLight a {
+  color: #000;
 }
 
 .whiteFooter a {
