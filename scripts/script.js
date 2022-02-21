@@ -27,7 +27,8 @@ function changeTheme() {
   }
 
   changeEducationTheme(!darkTheme);
-  changeProjectstheme();
+  changeProjectsTheme();
+  changeExperienceTheme();
 
   localStorage.setItem("darkTheme", !darkTheme);
   darkTheme = !darkTheme;
@@ -52,7 +53,7 @@ function changeEducationTheme(darkTheme) {
   }
 }
 
-function changeProjectstheme() {
+function changeProjectsTheme() {
   const projectFooter = document.querySelector(".yellowFooter");
   const projectContainer = document.querySelector(".projectsContainer");
   const projectItemContainer = document.querySelectorAll(".projectItemContainer");
@@ -65,6 +66,21 @@ function changeProjectstheme() {
         item.classList.toggle("projectItemContainerLight");
     });
   }
+}
+
+function changeExperienceTheme() {
+    const skillItems = document.querySelectorAll(".skillItemIcons");
+    const experiencePaneContainer = document.querySelector(".experiencePaneContainer");
+    const experiencePanes = document.querySelectorAll(".experiencePanes");
+    if (experiencePaneContainer !== null) {
+        skillItems.forEach(item => {
+            item.classList.toggle(".skillItemIconsLight");
+        });
+        experiencePaneContainer.classList.toggle("experiencePaneContainerBlack");
+        experiencePanes.forEach((item) => {
+          item.classList.toggle("paneBlack");
+        });
+    }
 }
 
 function loadTheme() {
@@ -81,7 +97,8 @@ function loadTheme() {
     }
 
     changeEducationTheme(darkTheme);
-    changeProjectstheme();
+    changeProjectsTheme();
+    changeExperienceTheme();
   }
 }
 

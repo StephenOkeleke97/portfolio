@@ -7,33 +7,48 @@
     <link rel="stylesheet" href="./styles/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./images/favicon-16x16.png">
+    <script defer src="./scripts/script.js"></script>
     <title>Stephen's Portfolio | Experience</title>
 </head>
 <body>
 
-    <header class="experienceHeader">
-        <div class="navTab whiteNav">
-            <div class="iconContainer">
-                <div class="icon whiteIcon">
-                    <ion-icon name="mail-outline"></ion-icon>
+    <header>
+        <div class="navTabContainer">
+
+            <div class="themeButtonContainer"></div>
+
+            <div class="navTab">
+                <div class="iconContainer">
+                    <div class="icon">
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <a href="mailto:okeleke.s@northeastern.edu">stephenokeleke@yahoo.com</a>
                 </div>
-                <a href="mailto:okeleke.s@northeastern.edu">stephenokeleke@yahoo.com</a>
+    
+                <div class="navItemsContainer">
+                    <ul>
+                        <li class="navItems"><a href="index.html">Home</a></li>
+                        <li class="navItems"><a href="education.html">Education</a></li>
+                        <li class="navItems"><a href="projects.html">Projects</a></li>
+                        <li class="navItems"><a href="#">Experience</a></li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="navItemsContainer">
-                <ul>
-                    <li class="navItems"><a href="index.html">Home</a></li>
-                    <li class="navItems"><a href="education.html">Education</a></li>
-                    <li class="navItems"><a href="projects.html">Projects</a></li>
-                    <li class="navItems"><a href="#">Experience</a></li>
-                </ul>
+            <div class="themeButtonContainer">
+                <div class="themeButton">
+                    <div class="toggle"></div>
+                    <ion-icon name="moon-outline"></ion-icon>
+                    <ion-icon name="sunny-outline"></ion-icon>
+                </div>
             </div>
+
         </div>
     </header>
 
     <section>
-        <div class="paneContainer">
-            <div class="leftPane">
+        <div class="experiencePaneContainer experiencePaneContainerBlack">
+            <div class="experiencePanes leftPane paneBlack">
 
                 <div class="skillsIntro">
                     <p class="absoluteP">Experience</p>
@@ -96,7 +111,7 @@
                 </div>
             </div>
 
-            <div class="rightPane">
+            <div class="experiencePanes rightPane paneBlack">
                 <h2>Experience</h2>
                 <div class="experienceList">
                     <div class="experienceItems">
@@ -129,7 +144,7 @@
     </section>
 
     <footer>
-        <div class="footer whiteFooter">
+        <div class="footer">
             <div class="footerContainer">
                 <p>Copyright&copy; 2022. All Rights Reserved</p>
                 <div class="footerIconContainer">

@@ -227,17 +227,19 @@ figure {
 }
 
 /* EXPERIENCE PAGE  */
-.experienceHeader {
-  background-color: #000;
+.experienceHeaderLight {
+  background-color: #fff;
 }
 
-.paneContainer {
+.paneContainer,
+.experiencePaneContainer {
   display: flex;
   color: #000;
   transition: color 0.5s;
 }
 
-.paneBlackContainer {
+.paneBlackContainer,
+.experiencePaneContainerBlack {
   color: #fff;
 }
 
@@ -305,9 +307,14 @@ figure {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #000;
+  background-color: #fff;
+  font-size: 1.8rem;
+}
+
+.skillItemIconsLight {
   color: #fff;
   background-color: #000;
-  font-size: 1.8rem;
 }
 
 .experienceItems {
