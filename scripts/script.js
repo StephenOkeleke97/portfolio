@@ -29,20 +29,40 @@ function changeTheme() {
   changeEducationTheme(!darkTheme);
   changeProjectsTheme();
   changeExperienceTheme();
+  changeHomeTheme();
 
   localStorage.setItem("darkTheme", !darkTheme);
   darkTheme = !darkTheme;
 }
 
+function changeHomeTheme() {
+    const connectButton = document.querySelector(".connectButton");
+
+    if (connectButton !== null) {
+        connectButton.classList.toggle("connectButtonLight")
+    }
+}
+
 function changeEducationTheme(darkTheme) {
   const educationPaneContainer = document.querySelector(".paneContainer");
   const educationPanes = document.querySelectorAll(".panes");
+  const educationItem = document.querySelectorAll(".educationItem");
+  const courseworkContainer = document.querySelectorAll(".courseworkContainer");
   const schoolLogo = document.querySelector(".schoolImage");
 
   if (educationPaneContainer !== null) {
     educationPaneContainer.classList.toggle("paneBlackContainer");
+
     educationPanes.forEach((item) => {
       item.classList.toggle("paneBlack");
+    });
+
+    educationItem.forEach((item) => {
+        item.classList.toggle("educationItemLight");
+    });
+
+    courseworkContainer.forEach((item) => {
+        item.classList.toggle("courseworkContainerLight");
     });
 
     if (darkTheme) {
@@ -54,13 +74,13 @@ function changeEducationTheme(darkTheme) {
 }
 
 function changeProjectsTheme() {
-  const projectFooter = document.querySelector(".yellowFooter");
+  const projectFooter = document.querySelector(".projectsFooter");
   const projectContainer = document.querySelector(".projectsContainer");
   const projectItemContainer = document.querySelectorAll(".projectItemContainer");
 
   if (projectHeader !== null) {
     projectHeader.classList.toggle("projectsHeaderLight");
-    projectFooter.classList.toggle("yellowFooterLight");
+    projectFooter.classList.toggle("projectsFooterLight");
     projectContainer.classList.toggle("projectsContainerLight");
     projectItemContainer.forEach(item => {
         item.classList.toggle("projectItemContainerLight");
@@ -74,7 +94,7 @@ function changeExperienceTheme() {
     const experiencePanes = document.querySelectorAll(".experiencePanes");
     if (experiencePaneContainer !== null) {
         skillItems.forEach(item => {
-            item.classList.toggle(".skillItemIconsLight");
+            item.classList.toggle("skillItemIconsLight");
         });
         experiencePaneContainer.classList.toggle("experiencePaneContainerBlack");
         experiencePanes.forEach((item) => {
@@ -99,6 +119,7 @@ function loadTheme() {
     changeEducationTheme(darkTheme);
     changeProjectsTheme();
     changeExperienceTheme();
+    changeHomeTheme();
   }
 }
 

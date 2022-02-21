@@ -127,12 +127,24 @@ figure {
 }
 
 /* THEME */
-.themeButtonContainer {
+.themeButtonContainer,
+.dateContainer {
   padding: 1.5rem 1.5rem 0 1.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
+  /* border: 2px solid green; */
+}
+
+.dateContainer {
+  /* padding: 0;
+  padding-left: 1rem; */
+  flex-direction: column;
+  font-size: 0.7rem;
+}
+
+.dateButton {
 }
 
 .themeButton {
@@ -220,6 +232,14 @@ figure {
   justify-content: center;
   cursor: pointer;
   transition: background-position 0.4s;
+}
+
+.connectButtonLight {
+  background-image: linear-gradient(to right, #ff7272 50%, #000 50%);
+}
+
+.connectButtonLight a {
+  color: #fff;
 }
 
 .connectButton:hover {
@@ -349,12 +369,21 @@ figure {
   color: #ffc11e;
 }
 
+.educationItemLight h2 {
+  color: #ff7272;
+}
+
 .courseworkContainer {
   padding: 1rem;
   display: flex;
   background-color: #ffc11e;
   border-radius: 1.5rem;
   margin-bottom: 2rem;
+  color: #fff;
+}
+
+.courseworkContainerLight {
+  background-color: #ff7272;
 }
 
 .courseWorkIcon {
@@ -391,7 +420,7 @@ figure {
 }
 
 .projectsHeaderLight {
-  background-color: #2398ab;
+  background-color: #ff7272;
 }
 
 .projectsContainer {
@@ -404,7 +433,7 @@ figure {
 }
 
 .projectsContainerLight {
-  background-color: #2398ab;
+  background-color: #ff7272;
   color: #fff;
 }
 
@@ -449,20 +478,20 @@ figure {
   height: 100%;
 }
 
+.projectsFooter {
+  background-color: #ffc11e;
+}
+
+.projectsFooterLight {
+  background-color: #ff7272;
+}
+
 /* FOOTER  */
 
 .footer {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-bottom: 2rem;
-}
-
-.yellowFooter {
-  background-color: #ffc11e;
-}
-
-.yellowFooterLight {
-  background-color: #2398ab;
 }
 
 .whiteFooter {
