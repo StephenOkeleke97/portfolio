@@ -4,12 +4,13 @@ let darkTheme =
     : convertStringToBoolean(localStorage.getItem("darkTheme"));
 
 const body = document.body;
-const nav = document.querySelector(".navTab");
+// const nav = document.querySelector(".navTab");
+const nav = document.getElementsByTagName("nav")[0];
 const toggleTheme = document.querySelector(".themeButton");
 const toggleBall = document.querySelector(".toggle");
 const emailIcom = document.querySelector(".icon");
 const footer = document.getElementsByTagName("footer")[0];
-const header = document.getElementsByTagName("header")[0];
+// const header = document.getElementsByTagName("header")[0];
 const projectHeader = document.querySelector(".projectsHeader");
 const dateContainer = document.querySelector(".dateContainer");
 const dateButton = document.querySelector(".dateButton");
@@ -61,7 +62,7 @@ function changeTheme(event) {
 
 function changeGeneralTheme() {
   toggleBall.classList.toggle("toggleLight");
-  header.classList.toggle("headerLight");
+  // header.classList.toggle("headerLight");
   dateButton.classList.toggle("dateButtonLight");
   toggleTheme.classList.toggle("themeButtonLight");
 
