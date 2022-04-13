@@ -6,21 +6,68 @@ let darkTheme =
 const body = document.body;
 // const nav = document.querySelector(".navTab");
 const nav = document.getElementsByTagName("nav")[0];
-const toggleTheme = document.querySelector(".themeButton");
-const toggleBall = document.querySelector(".toggle");
+const toggleTheme = document.querySelectorAll(".themeButton");
+const toggleBall = document.querySelectorAll(".toggle");
 const emailIcom = document.querySelector(".icon");
 const footer = document.getElementsByTagName("footer")[0];
 // const header = document.getElementsByTagName("header")[0];
 const projectHeader = document.querySelector(".projectsHeader");
 const dateContainer = document.querySelector(".dateContainer");
-const dateButton = document.querySelector(".dateButton");
+const dateButton = document.querySelectorAll(".dateButton");
+const mobileMenu = document.querySelector(".mobileNavMenu");
+const mobileNavButton = document.querySelectorAll(".mobileNavIcon");
 
-toggleTheme.addEventListener("click", changeTheme);
+const webNav = document.querySelector(".navTabContainer");
+const mobileNav = document.querySelector(".mobileNavContainer");
 
-dateButton.addEventListener("click", showDate);
+loadNav();
+
+window.addEventListener("resize", handleWindowResize);
+
+function handleWindowResize() {
+  loadNav();
+}
+
+function loadNav() {
+  if (window.innerWidth <= 700) {
+    webNav.style.display = "none";
+    mobileNav.style.display = "flex";
+  } else {
+    webNav.style.display = "flex";
+    mobileNav.style.display = "none";
+  }
+}
+
+toggleTheme.forEach(toggle => {
+  toggle.addEventListener("click", changeTheme);
+})
+
+dateButton.forEach(button => {
+  button.addEventListener("click", showDate);
+})
+
+mobileNavButton.forEach(button => {
+  button.addEventListener("touchend", toggleMenu);
+});
+
+function toggleMenu() {
+  const navMenu = document.querySelector(".mobileNavTab");
+
+  if (navMenu.classList.contains("mobileNavOpen")) {
+    document.body.style.overflow = "visible";
+  } else {
+    document.body.style.overflow = "hidden";
+  }
+  navMenu.classList.toggle("mobileNavOpen");
+}
 
 function showDate() {
-  const dateRadio = document.getElementById("date");
+  let dateRadio;
+  if (window.innerWidth <= 700) {
+    dateRadio = document.getElementById("date-mobile");
+  } else {
+    dateRadio = document.getElementById("date");
+  }
 
   const date = new Date();
   if (dateRadio.checked) {
@@ -33,16 +80,23 @@ function showDate() {
 }
 
 function appendDate(display) {
-  const dateElement = document.querySelector(".dateText");
-  const dateContainer = document.querySelector(".dateContainer");
+  let dateElement = document.querySelectorAll(".dateText");
+  const dateContainer = document.querySelectorAll(".dateContainer");
 
-  if (dateElement === null) {
-    const dateElement = document.createElement("p");
+  console.log(dateElement);
+  console.log(display);
+
+  if (dateElement.length <= 0) {
+    dateElement = document.createElement("p");
     dateElement.classList.add("dateText");
     dateElement.innerText = display;
-    dateContainer.prepend(dateElement);
+    dateContainer.forEach(container => {
+      container.prepend(dateElement);
+    })
   } else {
-    dateElement.innerText = display;
+    dateElement.forEach(element => {
+      element.innerText = display;
+    })
   }
 }
 
@@ -61,10 +115,17 @@ function changeTheme(event) {
 }
 
 function changeGeneralTheme() {
-  toggleBall.classList.toggle("toggleLight");
+  toggleBall.forEach(ball => {
+    ball.classList.toggle("toggleLight");
+  })
   // header.classList.toggle("headerLight");
-  dateButton.classList.toggle("dateButtonLight");
-  toggleTheme.classList.toggle("themeButtonLight");
+  dateButton.forEach(button => {
+    button.classList.toggle("dateButtonLight");
+  });
+  toggleTheme.forEach(toggle => {
+    toggle.classList.toggle("themeButtonLight");
+  });
+  mobileMenu.classList.toggle("mobileNavMenuLight");
 
   if (projectHeader === null) {
     body.classList.toggle("bodyLight");
