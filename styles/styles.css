@@ -39,6 +39,10 @@ body {
   color: #000;
 }
 
+.noDisplay {
+  display: none;
+}
+
 a:hover,
 a:visited,
 a:link {
@@ -100,6 +104,10 @@ figure {
   display: flex;
   flex-direction: row;
   align-items: center;
+}
+
+.projectsNav a{
+  color: #000;
 }
 
 .icon + a {
