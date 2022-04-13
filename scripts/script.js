@@ -118,6 +118,7 @@ function changeProjectsTheme() {
   const projectItemContainer = document.querySelectorAll(
     ".projectItemContainer"
   );
+  const projectNav = document.querySelector(".pnav");
 
   if (projectHeader !== null) {
     projectHeader.classList.toggle("projectsHeaderLight");
@@ -126,6 +127,7 @@ function changeProjectsTheme() {
     projectItemContainer.forEach((item) => {
       item.classList.toggle("projectItemContainerLight");
     });
+    projectNav.classList.toggle("projectsNav");
   }
 }
 
@@ -150,6 +152,8 @@ function loadTheme() {
   if (!darkTheme) {
     changeTheme();
   }
+  const body = document.querySelector(".noDisplay");
+  body.classList.remove("noDisplay");
 }
 
 function convertStringToBoolean(string) {
