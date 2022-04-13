@@ -114,7 +114,7 @@ function changeEducationTheme(darkTheme) {
 
 function changeProjectsTheme() {
   const projectFooter = document.querySelector(".projectsFooter");
-  const projectContainer = document.querySelector(".projectsContainer");
+  const projectContainer = document.querySelector(".projectsSection");
   const projectItemContainer = document.querySelectorAll(
     ".projectItemContainer"
   );
@@ -122,7 +122,7 @@ function changeProjectsTheme() {
   if (projectHeader !== null) {
     projectHeader.classList.toggle("projectsHeaderLight");
     projectFooter.classList.toggle("projectsFooterLight");
-    projectContainer.classList.toggle("projectsContainerLight");
+    projectContainer.classList.toggle("projectsSectionLight");
     projectItemContainer.forEach((item) => {
       item.classList.toggle("projectItemContainerLight");
     });
