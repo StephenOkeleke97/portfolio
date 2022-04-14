@@ -631,7 +631,8 @@ figure {
   padding-top: 20px;
 }
 
-.projectLinksContainer a {
+.projectLinksContainer a,
+#petfinderLink {
   color: #1771f1;
 }
 
