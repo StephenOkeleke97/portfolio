@@ -7,7 +7,7 @@ html {
   font-size: 20px;
 }
 
-header {
+nav {
   position: sticky;
   top: 0;
   z-index: 1;
@@ -32,6 +32,7 @@ body {
   color: #fff;
   margin: 0;
   transition: color 0.5s;
+  position: relative;
 }
 
 .bodyLight {
@@ -47,8 +48,8 @@ a:hover,
 a:visited,
 a:link {
   text-decoration: none;
-  color: #000;
-  font-size: 0.7rem;
+  color: #fff;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -56,8 +57,13 @@ a:active {
   color: #ffc11e;
 }
 
+.bodyLight a {
+  color: #000;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
 p {
-  font-weight: 200;
   font-size: 0.8rem;
   line-height: 1.2rem;
 }
@@ -70,9 +76,54 @@ figure {
 
 /* NAVIGATION  */
 
-.navTabContainer {
+.webNavContainer,
+.mobileNavContainer {
   display: flex;
   justify-content: space-between;
+}
+
+.mobileNavContainer {
+  display: none;
+  padding: 30px;
+}
+
+.mobileNavIcon {
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.mobileNavTab .mobileNavIcon:nth-of-type(2) {
+  display: none;
+}
+
+.mobileNavOpen .mobileNavIcon:nth-of-type(1) {
+  display: none;
+}
+
+.mobileNavOpen .mobileNavIcon:nth-of-type(2) {
+  display: block;
+}
+
+.mobileNavMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 40px;
+  padding-top: 80px;
+  background-color: #000;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease-in;
+  z-index: -1;
+}
+
+.mobileNavMenuLight {
+  background-color: #fff;
+}
+
+.mobileNavOpen .mobileNavMenu {
+  transform: translateX(0);
 }
 
 .navTab {
@@ -80,15 +131,26 @@ figure {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 0 4rem;
+  padding: 0 1rem;
   align-items: center;
   padding-top: 1.5rem;
 }
 
-.navTab a {
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
+.mobileNavContent {
+  flex-direction: column;
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 0;
+  padding-top: 30px;
+}
+
+.mobileNavContent ul {
+  padding: 0;
+}
+
+.navTabLight {
+  background-color: #fff;
 }
 
 .navTabLight a {
@@ -104,10 +166,6 @@ figure {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.projectsNav a{
-  color: #000;
 }
 
 .icon + a {
@@ -133,6 +191,15 @@ figure {
   margin-left: 1rem;
 }
 
+.mobileNavItems {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.mobileNavItems a {
+  font-size: 20px;
+}
+
 /* THEME */
 .themeButtonContainer,
 .dateContainer {
@@ -140,7 +207,14 @@ figure {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.themeButtonContainer {
   color: #fff;
+}
+
+.themeButtonContainerMobile {
+  padding: 0;
 }
 
 .dateContainer {
@@ -155,6 +229,15 @@ figure {
 
 .dateButtonContainer {
   margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.dateButtonItem {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-right: 10px;
 }
 
 .dateButton {
@@ -233,7 +316,7 @@ figure {
   flex-direction: column;
   align-items: center;
   padding-top: 3rem;
-  height: 100vh;
+  padding-bottom: 3rem;
 }
 
 .landingPortraitContainer {
@@ -258,10 +341,6 @@ figure {
 .landingDescription {
   width: 28%;
   text-align: center;
-}
-
-.landingDescription p {
-  font-weight: 100;
 }
 
 .buttonContainer {
@@ -472,12 +551,24 @@ figure {
   color: #fff;
 }
 
-.projectsHeader {
+.projectsHeader,
+.projectsHeader .mobileNavContainer .mobileNavMenu {
   background-color: #ffc11e;
+  color: #000;
 }
 
-.projectsHeaderLight {
+.projectsHeader a {
+  color: #000;
+}
+
+.projectsHeaderLight,
+.projectsHeaderLight .mobileNavContainer .mobileNavMenu {
   background-color: #ff7272;
+  color: #fff;
+}
+
+.projectsHeaderLight a {
+  color: #fff;
 }
 
 .projectsContainer {
@@ -604,4 +695,106 @@ figure {
 .footerIconContainer {
   display: flex;
   align-items: center;
+}
+
+@media (max-width: 1050px) {
+  .iconContainerWeb {
+    display: none;
+  }
+
+  .landingDescription {
+    width: 60%;
+  }
+
+  .projectsContainer {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .projects {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .project1 {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .paneContainer,
+  .experiencePaneContainer {
+    flex-direction: column;
+    padding: 100px;
+  }
+
+  .leftPane,
+  .rightPane {
+    width: 100%;
+    padding: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .dateContainerWeb {
+    display: none;
+  }
+}
+
+/* MENU COLLAPSES */
+
+@media (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
+
+  .landingContainer {
+    padding: 10px;
+    padding-bottom: 3rem;
+  }
+
+  .landingTitle {
+    width: 100%;
+  }
+
+  .landingDescription {
+    width: 80%;
+  }
+
+  .paneContainer,
+  .experiencePaneContainer {
+    padding: 40px;
+  }
+
+  .projectsContainer {
+    padding: 40px;
+    padding-top: 10px;
+  }
+
+  .dateButton:hover {
+    background-position: 0;
+    color: #fff;
+  }
+
+  .connectButton:hover {
+    background-position: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .paneContainer,
+  .experiencePaneContainer {
+    padding: 25px;
+  }
+
+  .absoluteP {
+    top: -1rem;
+    left: -1rem;
+    transform: rotate(-20deg);
+  }
+
+  .projectsContainer {
+    padding: 20px;
+    padding-top: 10px;
+  }
 }
