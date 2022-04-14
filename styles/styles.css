@@ -49,7 +49,7 @@ a:visited,
 a:link {
   text-decoration: none;
   color: #fff;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
@@ -76,7 +76,7 @@ figure {
 
 /* NAVIGATION  */
 
-.navTabContainer,
+.webNavContainer,
 .mobileNavContainer {
   display: flex;
   justify-content: space-between;
@@ -89,6 +89,7 @@ figure {
 
 .mobileNavIcon {
   font-size: 30px;
+  cursor: pointer;
 }
 
 .mobileNavTab .mobileNavIcon:nth-of-type(2) {
@@ -148,12 +149,6 @@ figure {
   padding: 0;
 }
 
-/* .navTab a {
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-} */
-
 .navTabLight {
   background-color: #fff;
 }
@@ -171,10 +166,6 @@ figure {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-.projectsNav a {
-  color: #000;
 }
 
 .icon + a {
@@ -208,7 +199,6 @@ figure {
 .mobileNavItems a {
   font-size: 20px;
 }
-
 
 /* THEME */
 .themeButtonContainer,
@@ -327,7 +317,6 @@ figure {
   align-items: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  min-height: 100vh;
 }
 
 .landingPortraitContainer {
@@ -562,12 +551,24 @@ figure {
   color: #fff;
 }
 
-.projectsHeader {
+.projectsHeader,
+.projectsHeader .mobileNavContainer .mobileNavMenu {
   background-color: #ffc11e;
+  color: #000;
 }
 
-.projectsHeaderLight {
+.projectsHeader a {
+  color: #000;
+}
+
+.projectsHeaderLight,
+.projectsHeaderLight .mobileNavContainer .mobileNavMenu {
   background-color: #ff7272;
+  color: #fff;
+}
+
+.projectsHeaderLight a {
+  color: #fff;
 }
 
 .projectsContainer {
@@ -700,9 +701,37 @@ figure {
   .iconContainerWeb {
     display: none;
   }
-  
+
   .landingDescription {
     width: 60%;
+  }
+
+  .projectsContainer {
+    flex-direction: column;
+    padding-top: 10px;
+  }
+
+  .projects {
+    width: 100%;
+    padding-top: 50px;
+  }
+
+  .project1 {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .paneContainer,
+  .experiencePaneContainer {
+    flex-direction: column;
+    padding: 100px;
+  }
+
+  .leftPane,
+  .rightPane {
+    width: 100%;
+    padding: 0;
   }
 }
 
@@ -712,6 +741,7 @@ figure {
   }
 }
 
+/* MENU COLLAPSES */
 
 @media (max-width: 700px) {
   html {
@@ -720,6 +750,7 @@ figure {
 
   .landingContainer {
     padding: 10px;
+    padding-bottom: 3rem;
   }
 
   .landingTitle {
@@ -727,6 +758,43 @@ figure {
   }
 
   .landingDescription {
-   width: 80%;
+    width: 80%;
+  }
+
+  .paneContainer,
+  .experiencePaneContainer {
+    padding: 40px;
+  }
+
+  .projectsContainer {
+    padding: 40px;
+    padding-top: 10px;
+  }
+
+  .dateButton:hover {
+    background-position: 0;
+    color: #fff;
+  }
+
+  .connectButton:hover {
+    background-position: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .paneContainer,
+  .experiencePaneContainer {
+    padding: 25px;
+  }
+
+  .absoluteP {
+    top: -1rem;
+    left: -1rem;
+    transform: rotate(-20deg);
+  }
+
+  .projectsContainer {
+    padding: 20px;
+    padding-top: 10px;
   }
 }

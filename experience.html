@@ -14,10 +14,10 @@
     <title>Stephen's Portfolio | Experience</title>
   </head>
   <body class="noDisplay">
-    <header>
-      <div class="navTabContainer">
+    <nav>
+      <div class="webNavContainer">
         <div class="dateContainer">
-          <form class="dateButtonContainer">
+          <form class="dateButtonContainer dateContainerWeb">
             <input name="timeDisplay" type="radio" id="date" checked />
             <label for="date">Date</label>
             <input name="timeDisplay" type="radio" id="time" />
@@ -27,7 +27,7 @@
         </div>
 
         <div class="navTab">
-          <div class="iconContainer">
+          <div class="iconContainer iconContainerWeb">
             <div class="icon">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
@@ -54,7 +54,73 @@
           </div>
         </div>
       </div>
-    </header>
+
+      <div class="mobileNavContainer">
+        <div class="mobileNavTab">
+          <div class="mobileNavIcon"><i class="fa-solid fa-bars"></i></div>
+          <div class="mobileNavIcon"><i class="fa-solid fa-xmark"></i></div>
+
+          <div class="mobileNavMenu">
+            <div class="dateContainer">
+              <form class="dateButtonContainer">
+                <div class="dateButtonItem">
+                  <input
+                    name="timeDisplay"
+                    type="radio"
+                    id="date-mobile"
+                    checked
+                  />
+                  <label for="date-mobile">Date</label>
+                </div>
+                <div class="dateButtonItem">
+                  <input name="timeDisplay" type="radio" id="time-mobile" />
+                  <label for="time-mobile">Time</label>
+                </div>
+                <div class="dateButtonItem">
+                  <div class="dateButton">Display</div>
+                </div>
+              </form>
+            </div>
+
+            <div class="navTab mobileNavContent">
+              <div class="iconContainer">
+                <div class="icon">
+                  <ion-icon name="mail-outline"></ion-icon>
+                </div>
+                <a href="mailto:okeleke.s@northeastern.edu"
+                  >stephenokeleke@yahoo.com</a
+                >
+              </div>
+
+              <div class="navItemsContainer">
+                <ul>
+                  <li class="navItems mobileNavItems">
+                    <a href="index.html">Home</a>
+                  </li>
+                  <li class="navItems mobileNavItems">
+                    <a href="education.html">Education</a>
+                  </li>
+                  <li class="navItems mobileNavItems">
+                    <a href="projects.html">Projects</a>
+                  </li>
+                  <li class="navItems mobileNavItems">
+                    <a href="#">Experience</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="themeButtonContainer themeButtonContainerMobile">
+          <div class="themeButton">
+            <div class="toggle"></div>
+            <ion-icon name="moon-outline"></ion-icon>
+            <ion-icon name="sunny-outline"></ion-icon>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <section>
       <div class="experiencePaneContainer experiencePaneContainerBlack">
@@ -66,7 +132,7 @@
               A full stack software developer in Vancouver. I specialize in
               server-side development using java and front-end design using
               HTML, CSS, Javascript and frameworks like React.js. I also have
-              working knowledge in making mobile applications with React Native.
+              experience in making mobile applications with React Native.
             </p>
           </div>
 
@@ -155,7 +221,7 @@
         <div class="footerContainer">
           <p>Copyright&copy; 2022. All Rights Reserved</p>
           <div class="footerIconContainer">
-            <a href="https://github.ccs.neu.edu/stephenokeleke" target="_blank"
+            <a href="https://github.com/StephenOkeleke97" target="_blank"
               ><i class="fab fa-github"></i
             ></a>
             <a href="mailto:okeleke.s@northeastern.edu"
@@ -166,6 +232,7 @@
       </div>
     </footer>
 
+    <script></script>
     <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"

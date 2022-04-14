@@ -4,20 +4,18 @@ let darkTheme =
     : convertStringToBoolean(localStorage.getItem("darkTheme"));
 
 const body = document.body;
-// const nav = document.querySelector(".navTab");
 const nav = document.getElementsByTagName("nav")[0];
 const toggleTheme = document.querySelectorAll(".themeButton");
 const toggleBall = document.querySelectorAll(".toggle");
 const emailIcom = document.querySelector(".icon");
 const footer = document.getElementsByTagName("footer")[0];
-// const header = document.getElementsByTagName("header")[0];
 const projectHeader = document.querySelector(".projectsHeader");
 const dateContainer = document.querySelector(".dateContainer");
 const dateButton = document.querySelectorAll(".dateButton");
 const mobileMenu = document.querySelector(".mobileNavMenu");
 const mobileNavButton = document.querySelectorAll(".mobileNavIcon");
 
-const webNav = document.querySelector(".navTabContainer");
+const webNav = document.querySelector(".webNavContainer");
 const mobileNav = document.querySelector(".mobileNavContainer");
 
 loadNav();
@@ -38,16 +36,16 @@ function loadNav() {
   }
 }
 
-toggleTheme.forEach(toggle => {
+toggleTheme.forEach((toggle) => {
   toggle.addEventListener("click", changeTheme);
-})
+});
 
-dateButton.forEach(button => {
+dateButton.forEach((button) => {
   button.addEventListener("click", showDate);
-})
+});
 
-mobileNavButton.forEach(button => {
-  button.addEventListener("touchend", toggleMenu);
+mobileNavButton.forEach((button) => {
+  button.addEventListener("click", toggleMenu);
 });
 
 function toggleMenu() {
@@ -83,20 +81,21 @@ function appendDate(display) {
   let dateElement = document.querySelectorAll(".dateText");
   const dateContainer = document.querySelectorAll(".dateContainer");
 
-  console.log(dateElement);
-  console.log(display);
-
   if (dateElement.length <= 0) {
-    dateElement = document.createElement("p");
-    dateElement.classList.add("dateText");
-    dateElement.innerText = display;
-    dateContainer.forEach(container => {
-      container.prepend(dateElement);
-    })
+    dateElementArray = [];
+    dateContainer.forEach((container, index) => {
+      dateElementArray[index] = document.createElement("p");
+      console.log(dateElement[index]);
+      dateElementArray[index].classList.add("dateText");
+      dateElementArray[index].innerText = display;
+    });
+    dateContainer.forEach((container, index) => {
+      container.prepend(dateElementArray[index]);
+    });
   } else {
-    dateElement.forEach(element => {
+    dateElement.forEach((element) => {
       element.innerText = display;
-    })
+    });
   }
 }
 
@@ -115,14 +114,14 @@ function changeTheme(event) {
 }
 
 function changeGeneralTheme() {
-  toggleBall.forEach(ball => {
+  toggleBall.forEach((ball) => {
     ball.classList.toggle("toggleLight");
-  })
+  });
   // header.classList.toggle("headerLight");
-  dateButton.forEach(button => {
+  dateButton.forEach((button) => {
     button.classList.toggle("dateButtonLight");
   });
-  toggleTheme.forEach(toggle => {
+  toggleTheme.forEach((toggle) => {
     toggle.classList.toggle("themeButtonLight");
   });
   mobileMenu.classList.toggle("mobileNavMenuLight");
@@ -180,7 +179,6 @@ function changeProjectsTheme() {
   const projectItemContainer = document.querySelectorAll(
     ".projectItemContainer"
   );
-  const projectNav = document.querySelector(".pnav");
 
   if (projectHeader !== null) {
     projectHeader.classList.toggle("projectsHeaderLight");
@@ -189,7 +187,6 @@ function changeProjectsTheme() {
     projectItemContainer.forEach((item) => {
       item.classList.toggle("projectItemContainerLight");
     });
-    projectNav.classList.toggle("projectsNav");
   }
 }
 
