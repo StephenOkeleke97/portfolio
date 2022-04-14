@@ -352,7 +352,6 @@ figure {
   border-radius: 30px;
   background-image: linear-gradient(to right, #ffc11e 50%, #fff 50%);
   background-size: 200% 100%;
-  width: 8rem;
   display: flex;
   justify-content: center;
   cursor: pointer;
